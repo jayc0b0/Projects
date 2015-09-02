@@ -1,0 +1,55 @@
+# Jacob Orner (jayc0b0)
+# Caesar Cypher script
+
+
+def main():
+    # Declare variables and take input
+    global alphabet
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f',
+                'g', 'h', 'i', 'j', 'k', 'l',
+                'm', 'n', 'o', 'p', 'q', 'r',
+                's', 't', 'u', 'v', 'w', 'x',
+                'y', 'z']
+    global messageArray
+    messageArray = []
+    choice = int(input("Enter 1 to encode. 2 to decode.\n>> "))
+
+    if choice == 1:
+        encode()
+    elif choice == 2:
+        pass  # Implement decode() and add here
+    else:
+        print "Invalid choice"
+        main()
+
+
+def encode():
+    message = raw_input("Enter a string to encode (letters only):\n>> ")
+    cypherShift = int(input("Enter an integer from 1-25 for the shift:\n>> "))
+
+    # Verify input
+    if not message.isalpha():
+        print "Please enter only letters into your message."
+        main()
+    else:
+        pass
+
+    if cypherShift < 1 or cypherShift > 25:
+        print "Invalid number. Please enter a valid shift value."
+        main()
+    else:
+        pass
+
+    # Break string into an array of letters and shift
+    messageArray = list(message)
+
+    for letter in messageArray:
+        if alphabet.index(letter) + cypherShift < 25:
+            letter = alphabet[alphabet.index(letter) + cypherShift]
+        else:
+            letter = alphabet[(alphabet.index(letter) + cypherShift) % 25]
+
+    # Output cyphered text
+    message = " ".join(messageArray)
+    print "Your cyphered message is:"
+    print message
