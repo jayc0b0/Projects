@@ -1,3 +1,10 @@
+INFO
+========
+
+I'll be working through these problems in Python, Java, and C++ (and whatever else I end up learning) as a means of really getting a handle on my languages and showing that I know my stuff when it comes to programming. Each set of solutions I find will be sorted into the appropriate folder and subfolder (Ex: Projects/C++/Numbers/...).
+
+
+
 Mega Project List
 ========
 
